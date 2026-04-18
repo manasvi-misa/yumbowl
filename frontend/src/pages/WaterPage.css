@@ -1,0 +1,148 @@
+.water-page { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.water-main-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.water-visual-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.water-visual-card h2 { font-size: 1.25rem; color: var(--text-primary); }
+.water-bottle { display: flex; flex-direction: column; align-items: center; }
+.bottle-cap {
+  width: 60px; height: 20px;
+  background: var(--bg-input);
+  border: 2px solid var(--border);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+.bottle-body {
+  width: 140px; height: 240px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-input);
+  position: relative;
+  overflow: hidden;
+}
+.bottle-fill {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(180deg, rgba(96,165,250,0.6) 0%, rgba(59,130,246,0.8) 100%);
+  transition: height 0.8s cubic-bezier(0.4,0,0.2,1);
+  min-height: 0;
+}
+.bottle-wave {
+  position: absolute;
+  top: -10px; left: -20px; right: -20px;
+  height: 20px;
+  background: linear-gradient(90deg, rgba(96,165,250,0.4) 0%, rgba(147,197,253,0.6) 50%, rgba(96,165,250,0.4) 100%);
+  border-radius: 50%;
+  animation: wave 2s ease-in-out infinite;
+}
+@keyframes wave {
+  0%,100% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(10px) scaleY(1.2); }
+}
+.bottle-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  z-index: 2;
+}
+.bottle-pct { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); }
+.bottle-total { font-size: 1rem; color: var(--text-primary); }
+.bottle-goal { font-size: 0.75rem; color: var(--text-muted); }
+
+.water-stats { display: flex; gap: 1rem; width: 100%; }
+.wstat { flex: 1; text-align: center; }
+.wstat span { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.wstat strong { font-size: 1rem; color: var(--text-primary); }
+
+.droplet-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.droplet { font-size: 1.5rem; opacity: 0.2; transition: var(--transition); }
+.droplet.filled { opacity: 1; filter: drop-shadow(0 0 6px rgba(96,165,250,0.6)); }
+
+.goal-achieved {
+  background: var(--accent-soft);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 600;
+  width: 100%;
+}
+
+.quick-water-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.quick-water-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0.875rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.quick-water-btn:hover { border-color: var(--blue); background: var(--blue-soft); }
+.quick-water-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.qwb-icon { font-size: 1.25rem; }
+.qwb-amount { font-size: 0.875rem; font-weight: 700; color: var(--text-primary); }
+.qwb-sub { font-size: 0.65rem; color: var(--text-muted); }
+
+.custom-water { display: flex; gap: 10px; }
+
+.water-log-list { display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto; }
+.water-log-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.wli-icon { font-size: 1.1rem; }
+.wli-amount { font-size: 1rem; font-weight: 600; color: var(--blue); }
+.wli-time { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+
+.tip-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.tip-item:last-child { border-bottom: none; }
+.tip-num {
+  width: 22px; height: 22px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.tip-item > span:last-child { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .water-main-grid { grid-template-columns: 1fr; }
+  .water-visual-card { max-width: 400px; margin: 0 auto; }
+  .quick-water-grid { grid-template-columns: repeat(3, 1fr); }
+}

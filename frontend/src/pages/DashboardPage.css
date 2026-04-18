@@ -1,0 +1,117 @@
+.dashboard { display: flex; flex-direction: column; gap: 0; }
+
+.dash-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.dash-header h1 { font-size: 1.75rem; }
+
+.stat-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.stat-num { font-size: 1.875rem; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 4px; }
+.stat-num small { font-size: 1rem; }
+.stat-name { font-size: 0.8125rem; color: var(--text-muted); font-weight: 500; margin-bottom: 8px; }
+.stat-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; }
+
+.dash-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.today-meals { display: flex; flex-direction: column; gap: 10px; }
+.today-meal-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.today-meal-item:hover { border-color: var(--border-active); }
+.meal-time-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.meal-info { flex: 1; overflow: hidden; }
+.meal-type { display: block; font-size: 0.7rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+.meal-dish { display: block; font-size: 0.875rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.meal-kcal { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); flex-shrink: 0; }
+
+.macro-rings { display: flex; justify-content: space-around; gap: 1rem; padding: 0.5rem 0; }
+.macro-ring-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.macro-ring-outer {
+  position: relative;
+  width: 90px; height: 90px;
+}
+.macro-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring-bg { fill: none; stroke: var(--bg-input); stroke-width: 6; }
+.ring-fill {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 0 175.9;
+  transition: stroke-dasharray 1s ease;
+}
+.ring-center {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.ring-val { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
+.ring-val small { font-size: 0.65rem; color: var(--text-muted); }
+.ring-label { font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); }
+.ring-sub { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Quick actions */
+.quick-actions { margin-bottom: 0; }
+.qa-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+.qa-item {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.qa-item span:first-child { font-size: 1.5rem; }
+.qa-item:hover { border-color: var(--border-active); color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+
+/* Profile strip */
+.profile-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.125rem 1.5rem;
+}
+.ps-item { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ps-item span { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.ps-item strong { font-size: 0.9375rem; color: var(--text-primary); text-transform: capitalize; }
+.ps-divider { width: 1px; height: 30px; background: var(--border); }
+
+/* Empty state */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  gap: 0.75rem;
+  text-align: center;
+}
+.empty-state span { font-size: 2.5rem; }
+.empty-state p { font-size: 0.9375rem; }
+.empty-state a { color: var(--accent); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .dash-main-grid { grid-template-columns: 1fr; }
+  .qa-grid { grid-template-columns: repeat(2,1fr); }
+  .profile-strip { flex-wrap: wrap; gap: 1rem; }
+  .ps-divider { display: none; }
+}
