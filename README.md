@@ -1,10 +1,10 @@
-# 🥗 YumBowl — Personalized Diet Planner
+#  YumBowl — Personalized Diet Planner
 
 A full-stack diet planning app that generates personalized weekly meal plans based on your body stats, goals, diet preferences, and monthly budget — with real Indian food.
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 | Layer     | Tech                                      |
 |-----------|-------------------------------------------|
@@ -16,7 +16,7 @@ A full-stack diet planning app that generates personalized weekly meal plans bas
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 yumbowl/
@@ -39,7 +39,7 @@ yumbowl/
 
 ---
 
-## 🛠️ Local Setup (No Downloads Needed — Node.js Already Installed)
+##  Local Setup (No Downloads Needed — Node.js Already Installed)
 
 ### 1. Clone / Unzip the project
 
@@ -103,7 +103,7 @@ Go back to your backend Vercel project → Settings → Environment Variables �
 
 ---
 
-## 🔑 API Endpoints
+##  API Endpoints
 
 ### Auth
 | Method | Endpoint            | Description       |
@@ -148,7 +148,7 @@ Go back to your backend Vercel project → Settings → Environment Variables �
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Personalized Meal Plans** — 7-day plans based on BMI, TDEE, diet type, allergies, budget
 - **50+ Indian Meal Options** — Dal Chawal, Poha, Paneer, Chicken, Fish etc.
@@ -161,7 +161,7 @@ Go back to your backend Vercel project → Settings → Environment Variables �
 
 ---
 
-## 📝 Notes
+##  Notes
 
 - The meal plan generator is rule-based (no external AI API needed — works offline!)
 - Allergies filter out matching foods from the plan
