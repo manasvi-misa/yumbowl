@@ -18,7 +18,6 @@ export default function WaterPage() {
     api.get('/profile').then(r => setGoal(r.data.waterIntakeGoal || 2.5)).catch(() => {});
   };
 
-  useEffect(() => { fetch(); }, []);
 
   const addWater = async (amount) => {
     const amt = parseFloat(amount);
