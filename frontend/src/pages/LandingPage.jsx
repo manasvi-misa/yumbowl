@@ -149,11 +149,11 @@ export default function LandingPage() {
           </Link>
 
           {/* Desktop links */}
-          <ol className="lp-nav__links" role="list">
+          <ul className="lp-nav__links" role="list">
             {NAV_LINKS.map(l => (
               <li key={l.label}><a href={l.href} className="lp-nav__link">{l.label}</a></li>
             ))}
-          </ol>
+          </ul>
 
           {/* CTA */}
           <div className="lp-nav__cta">
